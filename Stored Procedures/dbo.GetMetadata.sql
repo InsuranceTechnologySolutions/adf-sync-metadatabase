@@ -36,7 +36,7 @@ BEGIN
 			) AS SyncedTableKeys,
 			SyncTables.TableMappings
 		FROM dbo.SyncTables SyncTables
-		INNER JOIN dbo.SyncTableSyncConfiguration SyncTableSyncConfiguration ON SyncTables.ID = SyncTableSyncConfiguration.SyncTableID 
+		INNER JOIN dbo.SyncTableSyncConfiguration SyncTableSyncConfiguration ON SyncTableSyncConfiguration.SyncTableID = SyncTables.ID
 		INNER JOIN dbo.SyncConfigurations SyncConfigurations ON SyncConfigurations.ID = SyncTableSyncConfiguration.SyncConfigurationID
 		INNER JOIN dbo.LinkedServices LinkedServicesEtuity ON LinkedServicesEtuity.ID = SyncConfigurations.EtuityLinkedServiceID
 		INNER JOIN dbo.LinkedServices LinkedServicesINS ON LinkedServicesINS.ID = SyncConfigurations.INSLinkedServiceID
